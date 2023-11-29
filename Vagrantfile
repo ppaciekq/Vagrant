@@ -8,6 +8,10 @@ Vagrant.configure("2") do |config|
     v.cpus = 3
   end
   config.vm.network "private_network", ip: "192.168.44.44"
+
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "playbooks/clone_roles.yml"
+  end
   
   config.vm.provision "ansible_local" do |ansible|
     ansible.galaxy_role_file = 'requirements.yml'
