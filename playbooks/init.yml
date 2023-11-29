@@ -37,3 +37,4 @@
     - geerlingguy.docker
     - awscli2
     - terraform
+    - packages
